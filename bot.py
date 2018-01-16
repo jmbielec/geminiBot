@@ -1,5 +1,5 @@
 import sys
-from data_scraper import DataScraper
+from data_scraper import data_scraper
 
 
 """Trading Bot for Gemini Exchange
@@ -31,11 +31,7 @@ def main():
     elif option == '--live':
         print('this bot is currently not able to go live')
     elif option == '--scrape':
-        scraper = DataScraper()
-        scraper.create_connection()
-        print(scraper.insert_transaction((9, 4, 9, 9.9, 9.9, "sell")))
-        scraper.test_query()
-
+        data_scraper()
     else:
         print('unknown option:', option[0])
         print('usage: python bot.py [--scrape | --backtest | --live]')
