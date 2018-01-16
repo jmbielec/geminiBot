@@ -13,7 +13,5 @@ def data_scraper():
 
     """
     date = int(time.mktime(time.strptime('2018-1-12 00:00:00', '%Y-%m-%d %H:%M:%S')))
-    base_url = "https://api.gemini.com/v1"
-    response = urllib.request.urlopen(base_url + "/trades/btcusd?since=%s" % date)
-
+    response = urllib.request.urlopen("https://api.gemini.com/v1/trades/btcusd?timestamp=%s&limit_trades=500" % date)
     print(response.read())
