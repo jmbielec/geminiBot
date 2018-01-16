@@ -1,5 +1,5 @@
 import sys
-from data_scraper import data_scraper
+from data_scraper import DataScraper
 
 
 """Trading Bot for Gemini Exchange
@@ -21,7 +21,7 @@ def main():
 
     """
     if len(sys.argv) != 2:
-        print('usage: python alphaBot.py [--scrape | --backtest | --live]')
+        print('usage: python bot.py [--scrape | --backtest | --live]')
         sys.exit(1)
 
     option = sys.argv[1]
@@ -31,10 +31,14 @@ def main():
     elif option == '--live':
         print('this bot is currently not able to go live')
     elif option == '--scrape':
-        data_scraper()
+        scraper = DataScraper()
+        scraper.create_connection()
+        print(scraper.insert_transaction((9, 4, 9, 9.9, 9.9, "sell")))
+        scraper.test_query()
+
     else:
         print('unknown option:', option[0])
-        print('usage: python alphaBot.py [--scrape | --backtest | --live]')
+        print('usage: python bot.py [--scrape | --backtest | --live]')
         sys.exit(1)
 
 
