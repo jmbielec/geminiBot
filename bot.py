@@ -16,7 +16,7 @@ def main():
 
     Command line arguments:
     --scrape   --  scrapes the Gemini exchange to add trades to our GeminiHistorical Data sqlite database.
-    --backtest --  runs a backtest of our current trading strategy to test for profitability
+    --backtest --  runs a back test of our current trading strategy to test for profitability
     --live     --  starts the bot on the real exchange
 
     """

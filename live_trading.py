@@ -7,8 +7,8 @@ import json
 
 sandbox_url = 'https://api.sandbox.gemini.com/v1/balances'
 
-sandbox_api_key = 'kxdoyD9a9nqLBfHDKghK'
-sandbox_api_secret = b'425GSwqP2gMEPTdAjVpwR54eBVRn'
+sandbox_api_key = 'input your key here'
+sandbox_api_secret = b'input your key here'
 
 
 nonce = int(time.time() * 1000)
