@@ -8,8 +8,6 @@ This is the main file for the bot, where data scraping, back testing, and live t
 
 """
 
-# TODO finish data_scraper.py
-
 
 def main():
     """Takes a command line argument.
@@ -31,7 +29,7 @@ def main():
     elif option == '--live':
         print('this bot is currently not able to go live')
     elif option == '--scrape':
-        data_scraper()
+        print(data_scraper())
     else:
         print('unknown option:', option[0])
         print('usage: python bot.py [--scrape | --backtest | --live]')
