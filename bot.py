@@ -1,5 +1,6 @@
 import sys
 from data_scraper import data_scraper
+from trading_strats import trading_strats
 
 
 """Trading Bot for Gemini Exchange
@@ -25,7 +26,7 @@ def main():
     option = sys.argv[1]
 
     if option == '--backtest':
-        print("backtest not ready")
+        trading_strats('mean_reversion')
     elif option == '--live':
         print('this bot is currently not able to go live')
     elif option == '--scrape':
