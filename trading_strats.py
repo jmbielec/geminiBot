@@ -7,7 +7,7 @@ def trading_strats(strategy_name):
 
 
 def mean_reversion():
-    # TODO listen to voice recording on iphone about ideas
+    # TODO listen to voice recording on iphone about ideas for trading strats
     # TODO add parameters for when to buy, sell, stop loss, trailing stop loss, how long to precollect data, money to buy with
 
     data_list = [1.0] #TODO this is 15 minutes of price data, make it real
