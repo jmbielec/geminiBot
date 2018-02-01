@@ -30,6 +30,7 @@ def main():
     elif option == '--live':
         print('this bot is currently not able to go live')
     elif option == '--scrape':
+        print('Starting scraper...')
         print(data_scraper())
     else:
         print('unknown option:', option[0])

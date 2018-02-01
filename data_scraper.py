@@ -14,18 +14,26 @@ def data_scraper():
     database, and adds that data to said database, which is used when backtesting our trading strategies.
 
     """
+    print('Connecting to database...')
     # Make sure your GeminiHistoricalData database file is in the same directory as this file
     db_file = os.path.dirname(os.path.realpath(__file__)) + "\GeminiHistoricalData"
     conn = create_connection(db_file)
+    print('Database connected.')
 
+    print('Collecting and inserting transactions...')
     end_transaction_time = int(time.time())
     (transactions, number_of_transactions, last_transaction_time) = collect_transactions(int(time.time()) - 172800)
+    insert_transactions(conn, transactions)
 
     while number_of_transactions == 500 and end_transaction_time > last_transaction_time:
         (transactions, number_of_transactions, last_transaction_time) = collect_transactions(last_transaction_time)
         insert_transactions(conn, transactions)
 
+    print('Transactions collected and inserted.')
+
+    print('Disconnecting from database...')
     conn.close()
+    print('Database disconnected.')
     return "Scraping finished!"
 
 
