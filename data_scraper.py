@@ -22,7 +22,7 @@ def data_scraper():
 
     print('Collecting and inserting transactions...')
     end_transaction_time = int(time.time())
-    (transactions, number_of_transactions, last_transaction_time) = collect_transactions(int(time.time()) - 172800)
+    (transactions, number_of_transactions, last_transaction_time) = collect_transactions(int(time.time()) - 345600)
     insert_transactions(conn, transactions)
 
     while number_of_transactions == 500 and end_transaction_time > last_transaction_time:
@@ -53,7 +53,7 @@ def collect_transactions(epoch_start_time):
     This function returns a list of all trades/transactions made on Gemini for BTC/USD after the given timestamp
     up through the time when the function is called.
 
-    :param epoch_start_time: takes the epoch timestamp from two days ago during the current time by subtracting 172800
+    :param epoch_start_time: takes the epoch timestamp from four days ago during the current time by subtracting 345600
     :return: returns the list of transactions in the form of tuples
             (eg. [(timestamp, timestampms, tid, price_usd, amount_btc, transaction_type)])
 
