@@ -53,7 +53,7 @@ def collect_transactions(epoch_start_time):
     This function returns a list of all trades/transactions made on Gemini for BTC/USD after the given timestamp
     up through the time when the function is called.
 
-    :param epoch_start_time: takes the epoch timestamp from four days ago during the current time by subtracting 345600
+    :param epoch_start_time: takes the epoch timestamp from four days ago during the current time by subtracting 3456python00
     :return: returns the list of transactions in the form of tuples
             (eg. [(timestamp, timestampms, tid, price_usd, amount_btc, transaction_type)])
 
